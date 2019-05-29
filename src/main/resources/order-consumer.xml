@@ -11,7 +11,7 @@
 
     <!-- use zookeeper registry center to discover service -->
     <!-- 使用zookeeper注册中心来发现服务 -->
-    <dubbo:registry protocol="zookeeper" address="192.168.120.110:2181,192.168.120.150:2181,192.168.120.224:2181,192.168.120.137:2181" timeout="10000"/>
+    <dubbo:registry protocol="zookeeper" address="192.168.120.110:2181,192.168.120.150:2181,192.168.120.224:2181,192.168.120.137:2181" timeout="20000"/>
 
     <!-- 采用默认的 dubbo 协议来发布-->
     <!--<dubbo:registry address="N/A"/>-->
@@ -21,8 +21,8 @@
     <!-- 为远程服务生成代理，然后可以像使用的那样使用Service url属性进行关联, 如果使用zookeeper 就不需要使用url属性就可以获取到服务了-->
     <!--<dubbo:reference id="orderService" interface="com.inspur.dubbo.service.OrderService"
                      url="dubbo://22.2.24.246:20880/com.inspur.dubbo.service.OrderService"/>-->
-
-    <dubbo:reference id="orderService" interface="com.inspur.dubbo.service.OrderService"/>
+    <dubbo:reference id="orderService" interface="com.inspur.dubbo.service.OrderService" check="false" protocol="dubbo" version="0.0.1"/>
+    <dubbo:reference id="orderQueryService" interface="com.inspur.dubbo.service.OrderQueryService" check="false" protocol="dubbo"/>
 
 
 </beans>

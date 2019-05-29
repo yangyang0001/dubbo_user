@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd        http://code.alibabatech.com/schema/dubbo        http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="com.inspur.dubbo.user.service.impl"/>
+    
+    <!-- provider's application name, used for tracing dependency relationship -->
+    <!-- provider的application的名称(必须唯一),用于计算依赖关系 -->
+    <dubbo:application name="userprovider"/>
+
+    <!-- 监控中心 -->
+    <dubbo:monitor protocol="registry"/>
+
+    <!-- use multicast registry center to export service -->
+    <!-- 使用zookeeper注册中心,提供服务, 可以使用多个注册中心来处理(很少使用),取不同的id就OK了 -->
+    <dubbo:registry protocol="zookeeper" address="192.168.120.110:2181,192.168.120.150:2181,192.168.120.224:2181,192.168.120.137:2181"
+                    timeout="10000"/>
+
+    <!-- 存在多个注册中,这里没有配置注册中心的地址, 只提供注册不提供订阅
+    <dubbo:registry protocol="dubbo" subscribe="false"/>
+    -->
+
+    <!-- 采用默认的 dubbo 协议来发布-->
+    <!--<dubbo:registry address="N/A"/>-->
+
+    <!-- use dubbo protocol to export service on port 20880 -->
+    <!-- 当前的dubbo 协议提供当前服务的端口号, 可以绑定host端口号 -->
+    <dubbo:protocol name="dubbo" port="20881" host="192.168.120.187"/>
+
+    <!-- 提供多种协议供提供的服务使用  hessian默认的端口号是 8090-->
+    <dubbo:protocol name="hessian" port="8091" server="jetty"/>
+
+    <!-- declare the service interface to be exported -->
+    <!-- 服务接口,可以实现多版本控制,异步调用 -->
+    <dubbo:service interface="com.inspur.dubbo.user.service.UserService" ref="userService" protocol="hessian,dubbo" version="1.0"/>
+
+</beans>

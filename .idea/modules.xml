@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/dubbo_user.iml" filepath="$PROJECT_DIR$/dubbo_user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user_api/user_api.iml" filepath="$PROJECT_DIR$/user_api/user_api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user_provider/user_provider.iml" filepath="$PROJECT_DIR$/user_provider/user_provider.iml" />
     </modules>
   </component>
 </project>
