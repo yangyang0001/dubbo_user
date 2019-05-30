@@ -1,9 +1,11 @@
 package com.inspur.dubbo.user.service.impl;
 
+import com.inspur.dubbo.user.dao.UserDao;
 import com.inspur.dubbo.user.dto.UserLoginRequest;
 import com.inspur.dubbo.user.dto.UserLoginResponse;
 import com.inspur.dubbo.user.service.UserService;
 import com.inspur.dubbo.validator.UserValidator;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,6 +15,10 @@ import org.springframework.stereotype.Service;
  */
 @Service("userService")
 public class UserServiceImpl implements UserService {
+
+    @Autowired
+    private UserDao userDao;
+
     @Override
     public UserLoginResponse login(UserLoginRequest request) {
         System.out.println("login ------------->:" + request);
@@ -30,5 +36,10 @@ public class UserServiceImpl implements UserService {
         response.setCode("100002");
         response.setMemo("登录失败,帐号或密码错误");
         return response;
+    }
+
+    @Override
+    public void insertUser() {
+        userDao.insertUser();
     }
 }

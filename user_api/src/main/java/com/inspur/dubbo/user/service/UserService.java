@@ -14,4 +14,6 @@ public interface UserService {
      * @return
      */
     public UserLoginResponse login(UserLoginRequest request);
+
+    public void insertUser();
 }

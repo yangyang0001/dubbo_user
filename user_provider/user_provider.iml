@@ -40,9 +40,23 @@
     <orderEntry type="library" name="Maven: org.apache.zookeeper:zookeeper:3.3.3" level="project" />
     <orderEntry type="library" name="Maven: jline:jline:0.9.94" level="project" />
     <orderEntry type="library" name="Maven: com.caucho:hessian:4.0.38" level="project" />
-    <orderEntry type="library" name="Maven: javax.servlet:servlet-api:unknown" level="project" />
+    <orderEntry type="library" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
     <orderEntry type="library" name="Maven: org.mortbay.jetty:jetty:6.1.26" level="project" />
     <orderEntry type="library" name="Maven: org.mortbay.jetty:jetty-util:6.1.26" level="project" />
     <orderEntry type="library" name="Maven: org.mortbay.jetty:servlet-api:2.5-20081211" level="project" />
+    <orderEntry type="library" name="Maven: com.atomikos:transactions-jdbc:3.9.3" level="project" />
+    <orderEntry type="library" name="Maven: com.atomikos:transactions-jta:3.9.3" level="project" />
+    <orderEntry type="library" name="Maven: com.atomikos:transactions:3.9.3" level="project" />
+    <orderEntry type="library" name="Maven: com.atomikos:transactions-api:3.9.3" level="project" />
+    <orderEntry type="library" name="Maven: com.atomikos:atomikos-util:3.9.3" level="project" />
+    <orderEntry type="library" name="Maven: javax.transaction:jta:1.1" level="project" />
+    <orderEntry type="library" name="Maven: javax:javaee-api:7.0" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.mail:javax.mail:1.5.0" level="project" />
+    <orderEntry type="library" name="Maven: javax.activation:activation:1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.4.4" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.18" level="project" />
+    <orderEntry type="library" name="Maven: org.mybatis:mybatis-spring:1.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-tx:3.0.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:3.0.5.RELEASE" level="project" />
   </component>
 </module>
